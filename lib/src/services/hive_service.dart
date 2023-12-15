@@ -23,4 +23,8 @@ class HiveService {
   static Future<void> remove<T>(Box<T> box, int index) {
     return box.deleteAt(index);
   }
+
+  static Future<void> update<T>(Box<T> box, int index, T data) {
+    return box.putAt(index, data);
+  }
 }
