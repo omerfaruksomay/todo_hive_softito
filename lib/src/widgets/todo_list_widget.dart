@@ -25,6 +25,7 @@ class _TodoListWidgetState extends State<TodoListWidget> {
       valueListenable: widget.box.listenable(),
       builder: (context, value, child) {
         return ListView.builder(
+          shrinkWrap: true,
           itemCount: widget.box.values.length,
           itemBuilder: (context, index) {
             final element = widget.box.values.elementAt(index);
@@ -59,8 +60,6 @@ class _TodoListWidgetState extends State<TodoListWidget> {
                   borderRadius: BorderRadius.circular(20),
                 ),
                 leading: Checkbox(
-                  checkColor: Colors.black,
-                  fillColor: const MaterialStatePropertyAll(Colors.white),
                   value: element.isFinished,
                   onChanged: (value) {
                     setState(() {
